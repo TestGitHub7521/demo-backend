@@ -18,6 +18,6 @@ public class DemoBackenedApplication {
 	@GetMapping("")
     public String helloWorld() throws UnknownHostException {
 
-	    return "Hello from " + InetAddress.getLocalHost().getHostName();
+	    return "Hello from ";
     }
 }
