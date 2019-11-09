@@ -19,13 +19,18 @@ pipeline {
                 sh 'mvn -Dmaven.test.failure.ignore=true install' 
                
             }
-            steps{
-                 def customImage = docker.build("demobackend:latest")
-                customImage.inside {
-                sh 'make test'
-                }
+            
+            }
+         stage ('Docker') {
+            steps {
+                sh '''
+                    def customImage = docker.build("demobackend:latest")
+                '''
+               
+            }
+            
             }
            
         }
-    }
+    
 }
