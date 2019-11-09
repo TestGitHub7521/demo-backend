@@ -22,12 +22,11 @@ pipeline {
             
             }
          stage ('Docker') {
-            steps {
-                sh '''
-                    def customImage = docker.build("demobackend:latest")
-                '''
-               
-            }
+            steps{
+        script {
+          docker.build "demobackend:latest"
+        }
+      }
             
             }
            
